@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/(main)/services/rekond/page": "/services/rekond",
+  "/(main)/services/bilforsaljning/page": "/services/bilforsaljning",
+  "/(main)/page": "/",
+  "/(main)/about-us/page": "/about-us",
+  "/(main)/contact/page": "/contact",
+  "/(main)/services/dackhotell/page": "/services/dackhotell",
+  "/(main)/services/dack/page": "/services/dack",
+  "/(main)/services/mek/page": "/services/mek",
+  "/(main)/services/platskador/page": "/services/platskador",
+  "/(main)/services/svetsning/page": "/services/svetsning",
+  "/(main)/services/service/page": "/services/service"
+}
