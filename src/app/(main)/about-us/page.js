@@ -61,13 +61,13 @@ function About() {
         </Container>
       </Box>
       <Box component={"section"}
-        sx={{ py: 8 }}
+        sx={{ py: 8, mt: "50px", }}
       >
         <Container>
           <Grid container justifyContent={"center"}>
             <Grid size={{ xl: 10, lg: 11, md: 12, sm: 12, xs: 12 }}>
               <Grid container justifyContent={"space-between"} rowSpacing={5} columnSpacing={5}>
-                <Grid size={{ xl: 4.5, lg: 4.5, md: 5, sm: 12, xs: 12 }}>
+                <Grid size={{ xl: 5.8, lg: 5.8, md: 5.8, sm: 12, xs: 12 }}>
                   <Box
                     sx={{
                       display: "flex",
@@ -86,9 +86,10 @@ function About() {
                     />
                     <Box
                       sx={{
+                        width: "calc(100% - 64px)",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
+                        justifyContent: "flex-start",
                         background: Colors.primary,
                         gap: 1,
                         p: 3,
@@ -108,7 +109,7 @@ function About() {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid size={{ xl: 7.5, lg: 7.5, md: 7, sm: 12, xs: 12 }}>
+                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
                   <Box
                     sx={{
                       display: "flex",
@@ -117,47 +118,57 @@ function About() {
                       gap: 4
                     }}
                   >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: 0.5,
-                        }}
-                      >
-                        {[...Array(3)].map((_, ind) => (
-                          <LessThanIcon key={ind} />
-                        ))}
-                      </Box>
-                      <Typography variant="body1" sx={{ fontFamily: "Manrope", color: "#6D7076" }}>Välkommen till</Typography>
-                      <Box
-                        sx={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: 0.5,
-                        }}
-                      >
-                        {[...Array(3)].map((_, ind) => (
-                          <GreaterThanIcon key={ind} />
-                        ))}
-                      </Box>
-                    </Box>
                     <Box>
-                      <Typography variant="h1" sx={{ fontSize: { xl: "80px", lg: "74px", md: "68px", sm: "62px", xs: "54px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.black }}>
-                        STRINDBERGS
-                      </Typography>
-                      <Typography variant="h2" sx={{ fontSize: { xl: "80px", lg: "74px", md: "68px", sm: "62px", xs: "54px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.primary }}>
-                        BILVÅRD
-                      </Typography>
-                      <Typography variant="h5" sx={{ fontSize: "25px", fontFamily: "Manrope", color: "#6D7076" }}>
-                        Vi har lång erfarenhet av branschen och behärskar alla biltyper och modeller och vet vilka behandlingar som får dem att glänsa och få ett högre andrahandsvärde. Vi vet hur man rengör en bil och ger den ett bättre skydd mot väder, vind och alla typer av föroreningar.
-                      </Typography>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 0.5,
+                          }}
+                        >
+                          {[...Array(3)].map((_, ind) => (
+                            <LessThanIcon key={ind} />
+                          ))}
+                        </Box>
+                        <Typography variant="body1" sx={{ fontFamily: "Manrope", color: "#6D7076" }}>Välkommen till</Typography>
+                        <Box
+                          sx={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 0.5,
+                          }}
+                        >
+                          {[...Array(3)].map((_, ind) => (
+                            <GreaterThanIcon key={ind} />
+                          ))}
+                        </Box>
+                      </Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 1
+                        }}
+                      >
+                        <Box>
+                          <Typography variant="h1" sx={{ fontSize: { xl: "80px", lg: "74px", md: "68px", sm: "62px", xs: "54px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.black }}>
+                            STRINDBERGS
+                          </Typography>
+                          <Typography variant="h2" sx={{ fontSize: { xl: "80px", lg: "74px", md: "68px", sm: "62px", xs: "54px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.primary }}>
+                            BILVÅRD
+                          </Typography>
+                        </Box>
+                        <Typography variant="h5" sx={{ fontSize: "25px", fontFamily: "Manrope", color: "#6D7076" }}>
+                          Vi har lång erfarenhet av branschen och behärskar alla biltyper och modeller och vet vilka behandlingar som får dem att glänsa och få ett högre andrahandsvärde. Vi vet hur man rengör en bil och ger den ett bättre skydd mot väder, vind och alla typer av föroreningar.
+                        </Typography>
+                      </Box>
                     </Box>
                     <PrimaryButton
                       title={"Get to Know Us"}
@@ -170,16 +181,20 @@ function About() {
         </Container>
       </Box>
       <Box component={"section"}
-        sx={{ background: `url(${Images.why_choose_us.src})no-repeat`, backgroundPositionX: { xl: "80%", lg: "80%", md: "-14%", sm: 0, xs: 0 }, backgroundSize: "cover" }}
+        sx={{
+          background: { xl: `url(${Images.why_choose_us.src})no-repeat`, lg: `url(${Images.why_choose_us.src})no-repeat`, md: `url(${Images.why_choose_us.src})no-repeat`, sm: "none", xs: "none" },
+          backgroundSize: "cover !important",
+          backgroundPosition: "center center !important",
+          p: { xl: "200px", lg: "140px", md: 10, sm: 6, xs: 3 },
+        }}
       >
         <Grid container>
-          <Grid size={{ xl: 3, lg: 6, md: 6, sm: 7.5, xs: 12 }}>
+          <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 4,
-                p: { xl: 10, lg: 10, md: 10, sm: 3, xs: 2 },
+                gap: 2,
               }}
             >
               <Typography variant="h5" sx={{ fontSize: { xl: "50px", lg: "50px", md: "42px", sm: "42px", xs: "34px" }, fontFamily: "Urbanist", fontWeight: 900 }}>
@@ -194,7 +209,7 @@ function About() {
         </Grid>
       </Box>
       <Box component={"section"}
-        sx={{ pt: 8, pb: "84px", background: `url(${Images.feedback_bg.src})no-repeat`, backgroundSize: "cover", position: 'relative' }}
+        sx={{ pt: 8, pb: "164px", background: `url(${Images.feedback_bg.src})no-repeat`, backgroundSize: "cover", position: 'relative' }}
       >
         <Container maxWidth="xl">
           <Grid container justifyContent={"center"}>
@@ -330,7 +345,9 @@ function About() {
               <Box
                 sx={{
                   p: 4,
-                  bottom: { xl: -132, lg: -132, md: -80, sm: -64, xs: -64 },
+                  border: `8px solid ${Colors.deep_blue}`,
+                  borderRadius: 6,
+                  bottom: { xl: -140, lg: -140, md: -140, sm: -64, xs: -64 },
                   height: "335px",
                   position: "relative",
                   backgroundSize: "cover !important",
@@ -355,7 +372,7 @@ function About() {
             position: "absolute",
             bottom: { xl: 128, lg: 128, md: 80, sm: 48, xs: 48 },
             width: "100%",
-            height: { xl: "110px", lg: "110px", md: "110px", sm: "224px", xs: "224px" },
+            height: { xl: "180px", lg: "180px", md: "180px", sm: "224px", xs: "224px" },
             background: Colors.white
           }}
         />

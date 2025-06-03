@@ -20,6 +20,7 @@ import "@fontsource/manrope";
 import "@fontsource/urbanist";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import styles from "@/app/page.module.css"
 
 const Navigations = [
   {
@@ -107,17 +108,19 @@ function Footer() {
         <Grid container spacing={{ xl: 4, lg: 4, md: 4, sm: 3, xs: 3 }}>
           {/* Logo */}
           <Grid size={{ xl: 1.5, lg: 2, md: 2.5, sm: 12, xs: 12 }}>
-            <CardMedia
-              component="img"
-              src={Images.logo.src}
-              alt="Footer Logo"
-              sx={{
-                height: "auto",
-                width: { xl: "100%", lg: "100%", md: "100%", sm: "32%", xs: "64%" },
-                objectFit: "contain",
-                m: "0 auto",
-              }}
-            />
+            <Link href={"/"}>
+              <CardMedia
+                component="img"
+                src={Images.logo.src}
+                alt="Footer Logo"
+                sx={{
+                  height: "auto",
+                  width: { xl: "100%", lg: "100%", md: "100%", sm: "32%", xs: "64%" },
+                  objectFit: "contain",
+                  m: "0 auto",
+                }}
+              />
+            </Link>
           </Grid>
           <Grid size={{ xl: 10.5, lg: 10, md: 9.5, sm: 12, xs: 12 }}>
             <Grid container spacing={{ xl: 4, lg: 4, md: 2, sm: 4, xs: 4 }} justifyContent={{ xl: "flex-start", lg: "flex-start", md: "flex-start", sm: "center", xs: "center" }}>
@@ -202,13 +205,13 @@ function Footer() {
                     }}
                   >
                     {Navigations.map((link, ind) => (
-                      <Link key={ind} href={link.path} passHref style={{ textDecoration: "none" }}>
+                      <Link key={ind} href={link.path} passHref className={styles.link}>
                         <Typography
                           variant="body1"
                           sx={{
                             fontSize: "18px",
                             color: "#6D7076 !important",
-                            textDecoration: "underline",
+                            textDecoration: "none !important",
                             fontFamily: "Manrope",
                             ":hover": {
                               color: '#e62424',
@@ -241,13 +244,13 @@ function Footer() {
                     }}
                   >
                     {Services.slice(0, 4).map((link, ind) => (
-                      <Link key={ind} href={link.path} passHref style={{ textDecoration: "none" }}>
+                      <Link key={ind} href={link.path} passHref className={styles.link}>
                         <Typography
                           variant="body1"
                           sx={{
                             fontSize: "18px",
                             color: "#6D7076 !important",
-                            textDecoration: "underline",
+                            textDecoration: "none !imoirtant",
                             fontFamily: "Manrope",
                             ":hover": {
                               color: '#e62424',
@@ -280,13 +283,13 @@ function Footer() {
                     }}
                   >
                     {Services.slice(4, 8).map((link, ind) => (
-                      <Link key={ind} href={link.path} passHref style={{ textDecoration: "none" }}>
+                      <Link key={ind} href={link.path} passHref className={styles.link}>
                         <Typography
                           variant="body1"
                           sx={{
                             fontSize: "18px",
                             color: "#6D7076 !important",
-                            textDecoration: "underline",
+                            textDecoration: "none !important",
                             fontFamily: "Manrope",
                             ":hover": {
                               color: '#e62424',

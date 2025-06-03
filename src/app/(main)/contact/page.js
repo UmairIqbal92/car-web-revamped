@@ -72,7 +72,7 @@ function Contact() {
           </Box>
         </Container>
       </Box>
-      <Box component={"section"}>
+      <Box component={"section"} sx={{ my: "50px" }}>
         <Grid container>
           <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
             <Container maxWidth="xl">

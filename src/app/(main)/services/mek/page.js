@@ -13,9 +13,9 @@ const CustomTextField = styled(TextField)({
   background: "#EEF4FF",
   "& .MuiOutlinedInput-root": {
     fontFamily: "Poppins",
-    "& fieldset": {
-      border: "none"
-    }
+    // "& fieldset": {
+    //   border: "none"
+    // }
   }
 });
 
@@ -95,7 +95,7 @@ function Mek() {
           </Box>
         </Container>
       </Box>
-      <Box component={"section"} sx={{ py: 4 }}>
+      <Box component={"section"} sx={{ py: 4, my: "50px" }}>
         <Container maxWidth={"xl"}>
           <Grid container justifyContent={"center"} rowSpacing={4}>
             <Grid size={12}>
@@ -147,13 +147,14 @@ function Mek() {
               <Box
                 sx={{
                   background: Colors.soft_gray,
-                  p: 3
+                  py: 6,
+                  px: 3
                 }}
               >
                 <Grid container>
                   <Grid size={12}>
                     <Grid container rowSpacing={isFormVisible ? 8 : 0}>
-                      <Grid size={12}>
+                      {/* <Grid size={12}>
                         <Grid container justifyContent={"center"}>
                           <Grid size={{ xl: 4, lg: 4, md: 8, sm: 10, xs: 12 }}>
                             <Box
@@ -170,147 +171,147 @@ function Mek() {
                             </Box>
                           </Grid>
                         </Grid>
-                      </Grid>
-                      <Collapse in={isFormVisible}>
-                        <Grid size={12}>
-                          <Grid container justifyContent={"center"} rowSpacing={5}>
-                            <Grid size={{ xl: 7, lg: 7, md: 7, sm: 12, xs: 12 }}>
-                              <Box
-                                sx={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  gap: 2
-                                }}
-                              >
-                                <Typography variant="h4" sx={{ fontSize: 32, fontFamily: "Poppins", fontWeight: 700 }}>Book your appointment now</Typography>
-                                <Typography variant="body1" sx={{ fontFamily: "Poppins", fontWeight: 600 }}>So our team can reach out to you on time</Typography>
-                              </Box>
-                            </Grid>
-                            <Grid size={{ xl: 7, lg: 7, md: 9, sm: 12, xs: 12 }}>
-                              <Grid container spacing={3}>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Förnamn *</Typography>
-                                    <CustomTextField placeholder="e.g: John" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Efternamn *</Typography>
-                                    <CustomTextField placeholder="e.g: Doe" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Din email *</Typography>
-                                    <CustomTextField placeholder="e.g: john.doe@example.com" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Telefonnummer *</Typography>
-                                    <CustomTextField placeholder="e.g: 123456789" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Registreringsnummer</Typography>
-                                    <CustomTextField placeholder="e.g: 123456789" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Märke (t.ex. Ford)</Typography>
-                                    <CustomTextField placeholder="e.g: Ford" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Modell (t.ex. Mustang)</Typography>
-                                    <CustomTextField placeholder="e.g: Mustang" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Totalbelopp</Typography>
-                                    <CustomTextField placeholder="e.g: 123" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      flexDirection: "column",
-                                      gap: 1
-                                    }}
-                                  >
-                                    <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 500, fontFamily: "Poppins" }}>Skriv ditt meddelande</Typography>
-                                    <CustomTextField multiline={true} rows={7} placeholder="Message" />
-                                  </Box>
-                                </Grid>
-                                <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
-                                  <Box
-                                    sx={{
-                                      display: "flex",
-                                      justifyContent: "center"
-                                    }}
-                                  >
-                                    <PrimaryButton color={Colors.primary} title={"Bekräfta"} />
-                                  </Box>
-                                </Grid>
+                      </Grid> */}
+                      {/* <Collapse in={isFormVisible}> */}
+                      <Grid size={12}>
+                        <Grid container justifyContent={"center"} rowSpacing={5}>
+                          <Grid size={{ xl: 7, lg: 7, md: 7, sm: 12, xs: 12 }}>
+                            <Box
+                              sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: 2
+                              }}
+                            >
+                              <Typography variant="h4" sx={{ fontSize: 32, textAlign: "center", fontFamily: "Poppins", fontWeight: 700 }}>Book your appointment now</Typography>
+                              <Typography variant="body1" sx={{ textAlign: "center", fontFamily: "Poppins", fontWeight: 600 }}>So our team can reach out to you on time</Typography>
+                            </Box>
+                          </Grid>
+                          <Grid size={{ xl: 7, lg: 7, md: 9, sm: 12, xs: 12 }}>
+                            <Grid container spacing={3}>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Förnamn <span style={{ color: Colors.primary }}>*</span></Typography>
+                                  <CustomTextField placeholder="e.g: John" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Efternamn <span style={{ color: Colors.primary }}>*</span></Typography>
+                                  <CustomTextField placeholder="e.g: Doe" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Din email <span style={{ color: Colors.primary }}>*</span></Typography>
+                                  <CustomTextField placeholder="e.g: john.doe@example.com" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Telefonnummer <span style={{ color: Colors.primary }}>*</span></Typography>
+                                  <CustomTextField placeholder="e.g: 123456789" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Registreringsnummer</Typography>
+                                  <CustomTextField placeholder="e.g: 123456789" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Märke (t.ex. Ford)</Typography>
+                                  <CustomTextField placeholder="e.g: Ford" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Modell (t.ex. Mustang)</Typography>
+                                  <CustomTextField placeholder="e.g: Mustang" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Totalbelopp</Typography>
+                                  <CustomTextField placeholder="e.g: 123" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: 1
+                                  }}
+                                >
+                                  <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Skriv ditt meddelande</Typography>
+                                  <CustomTextField multiline={true} rows={7} placeholder="Message" />
+                                </Box>
+                              </Grid>
+                              <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    justifyContent: "center"
+                                  }}
+                                >
+                                  <PrimaryButton color={Colors.primary} title={"Bekräfta"} />
+                                </Box>
                               </Grid>
                             </Grid>
                           </Grid>
                         </Grid>
-                      </Collapse>
+                      </Grid>
+                      {/* </Collapse> */}
                     </Grid>
                   </Grid>
                 </Grid>

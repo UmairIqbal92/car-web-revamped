@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import '@fontsource/outfit';
+import { Box } from '@mui/material';
 
 const CircularProgress = ({ percentage = 99, size = 220, strokeWidth = 2, duration = 1000 }) => {
   const radius = (size - strokeWidth) / 2;
@@ -47,7 +48,17 @@ const CircularProgress = ({ percentage = 99, size = 220, strokeWidth = 2, durati
   }, [circumference, percentage]);
 
   return (
-    <div style={{ textAlign: 'center' }} ref={containerRef}>
+    <Box
+      component={"div"}
+      sx={{
+        textAlign: 'center',
+        transition: 'filter 0.3s ease-in-out',
+        ":hover": {
+          filter: 'drop-shadow(0 0 5px rgba(255, 0, 0, 0.6))',
+        }
+      }}
+      ref={containerRef}
+    >
       <svg width={size} height={size}>
         <circle
           stroke="#eee"
@@ -86,7 +97,7 @@ const CircularProgress = ({ percentage = 99, size = 220, strokeWidth = 2, durati
         </text>
       </svg>
       <div style={{ marginTop: 5, fontSize: 12 }}>{percentage}% Kundnöjhet</div>
-    </div>
+    </Box>
   );
 };
 

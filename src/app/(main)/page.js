@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Fragment, useRef, useState } from 'react';
-import { Box, Button, CardMedia, Container, Grid, List, ListItem, Typography } from '@mui/material';
+import { Box, Button, CardMedia, Container, Grid, IconButton, List, ListItem, Typography } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Navigation } from "swiper/modules";
 import { ArrowdownIcon, ChatIcon, GreaterThanIcon, LessThanIcon, PhoneIcon2, QuoteIcon, StarIcon } from '@/app/assets/icons';
@@ -13,6 +13,10 @@ import "@fontsource/roboto";
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import Link from 'next/link';
+import "@fontsource/urbanist";
+import "@fontsource/urbanist/900.css";
+import "@fontsource/urbanist/800.css";
+import "@fontsource/urbanist/700.css";
 
 const slides = [Images.hero_image.src, Images.hero_image.src, Images.hero_image.src];
 
@@ -134,8 +138,8 @@ export default function Home() {
                     <Typography
                       variant="h1"
                       sx={{
-                        top: "4%",
-                        right: "4%",
+                        top: "12%",
+                        right: "12%",
                         position: "absolute",
                         fontFamily: "Roboto",
                         fontWeight: 700,
@@ -207,7 +211,13 @@ export default function Home() {
             </Swiper>
           </Grid>
           <Grid size={12} container justifyContent={"center"}>
-            <Box
+            <IconButton
+              onClick={() => {
+                const section = document.getElementById("services");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               sx={{
                 width: "68px",
                 height: "68px",
@@ -215,20 +225,23 @@ export default function Home() {
                 background: Colors.primary,
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                ":hover": {
+                  background: Colors.deep_blue
+                }
               }}
             >
               <ArrowdownIcon />
-            </Box>
+            </IconButton>
           </Grid>
         </Grid>
       </Box>
       <Box component={"section"} sx={{ py: 12, borderBottom: "1px solid #E6E6E6" }}>
         <Container maxWidth={"xl"} sx={{ px: { xl: 0, lg: 0, md: 0, sm: 3, xs: 3 } }}>
           <Grid container justifyContent={"center"}>
-            <Grid size={{ xl: 8, lg: 8, md: 10, sm: 12, xs: 12 }}>
-              <Grid container spacing={3} justifyContent={"space-between"}>
-                <Grid size={{ xl: 5, lg: 5.5, md: 5.5, sm: 5.5, xs: 12 }}>
+            <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
+              <Grid container spacing={3} justifyContent={"center"}>
+                <Grid size={{ xl: 4, lg: 4, md: 4, sm: 5, xs: 12 }}>
                   <Box sx={{ position: "relative" }}>
                     <CardMedia
                       component={"img"}
@@ -260,7 +273,7 @@ export default function Home() {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
+                <Grid size={{ xl: 4, lg: 4, md: 4, sm: 5, xs: 12 }}>
                   <Box
                     sx={{
                       display: "flex",
@@ -285,7 +298,7 @@ export default function Home() {
           </Grid>
         </Container>
       </Box>
-      <Box component={"section"} sx={{ pt: 12, position: "relative" }}>
+      <Box component={"section"} id={"services"} sx={{ pt: 12, position: "relative" }}>
         <Box
           sx={{
             position: "absolute",
@@ -315,18 +328,20 @@ export default function Home() {
           </Box>
         </Box>
         <Grid container justifyContent={"center"} rowSpacing={5}>
-          <Grid size={{ xl: 4, lg: 4, md: 4, sm: 8, xs: 12 }}>
-            <Typography variant="h3" sx={{ fontFamily: "Urbanist", fontSize: "50px", fontWeight: 900, textAlign: "center" }}>
+          <Grid size={{ xl: 4.5, lg: 4.5, md: 4.5, sm: 8, xs: 12 }}>
+            <Typography variant="h3" sx={{ fontFamily: "Urbanist", fontSize: "50px", fontWeight: "900 !important", textAlign: "center" }}>
               We’re Offering the <span style={{ color: Colors.primary }}>Best Services</span> to You
             </Typography>
           </Grid>
           <Grid size={12}>
-            <Container maxWidth={"xl"}>
+            <Container sx={{ maxWidth: "1366px" }}>
+              {/* <Grid container justifyContent={"center"}>
+                <Grid size={{ xl: 10, lg: 10, md: 10, sm: 12, xs: 10 }}> */}
               <Grid container rowSpacing={6} columnSpacing={3}>
                 {servicesData.map((item, ind) => (
                   <Grid
                     key={ind}
-                    size={{ xl: 3, lg: 3, md: 3, sm: 4, xs: 12 }}
+                    size={{ xl: 3, lg: 3, md: 3, sm: 6, xs: 12 }}
                     sx={{
                       transition: "display 0.3s ease-in-out",
                       ":hover": {
@@ -414,6 +429,8 @@ export default function Home() {
                   </Grid>
                 ))}
               </Grid>
+              {/* </Grid>
+              </Grid> */}
             </Container>
           </Grid>
         </Grid>
@@ -503,7 +520,7 @@ export default function Home() {
                         }}
                       >
                         <Typography sx={{ fontSize: "60px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pb: 1, }}>Verkstaden</Typography>
-                        <Typography sx={{ fontSize: "20px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pt: 2, borderTop: `1px solid ${Colors.white + 33}` }}>Verkstaden på STRINDBERS BILVÅRD jobbar med helhetslösningar.
+                        <Typography sx={{ fontSize: "20px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pt: 2, borderTop: `2px solid ${Colors.white + 33}` }}>Verkstaden på STRINDBERS BILVÅRD jobbar med helhetslösningar.
                           Vi utför reparationer, motorbyten, byte av växellåda, service och svetsningar. Vi utför även
                           däckarbeten och har däckförvaring. Dessutom monterar vi dragkrokar, fixar plåtskador och lackar. Vi säljer också begagnade bilar.</Typography>
                         <Button
@@ -514,9 +531,16 @@ export default function Home() {
                             color: Colors.white,
                             borderRadius: 1,
                             border: "2px solid #FFFFFF",
-                            p: "20px 16px"
+                            p: "20px 16px",
+                            ":hover": {
+                              background: Colors.white,
+                              color: Colors.primary,
+                              fontWeight: 600
+                            }
                           }}
-                        >Read More</Button>
+                        >
+                          Read More
+                        </Button>
                       </Box>
                     </Grid>
                     <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
@@ -560,7 +584,7 @@ export default function Home() {
                         }}
                       >
                         <Typography sx={{ fontSize: "60px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pb: 1, }}>Reservdelar</Typography>
-                        <Typography sx={{ fontSize: "20px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pt: 2, borderTop: `1px solid ${Colors.white + 33}` }}>Verkstaden på STRINDBERS BILVÅRD jobbar med helhetslösningar. Vi har kontakt med olika leverantörer både i Sverige och utomlands och kan skaffa resevervdelar, nya och begagnade, till alla bilar.</Typography>
+                        <Typography sx={{ fontSize: "20px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pt: 2, borderTop: `2px solid ${Colors.white + 33}` }}>Verkstaden på STRINDBERS BILVÅRD jobbar med helhetslösningar. Vi har kontakt med olika leverantörer både i Sverige och utomlands och kan skaffa resevervdelar, nya och begagnade, till alla bilar.</Typography>
                         <Button
                           variant={"outlined"}
                           sx={{
@@ -569,7 +593,12 @@ export default function Home() {
                             color: Colors.white,
                             borderRadius: 1,
                             border: "2px solid #FFFFFF",
-                            p: "20px 16px"
+                            p: "20px 16px",
+                            ":hover": {
+                              background: Colors.white,
+                              color: Colors.primary,
+                              fontWeight: 600
+                            }
                           }}
                         >Read More</Button>
                       </Box>
@@ -619,111 +648,123 @@ export default function Home() {
             <Grid size={{ xl: 10, lg: 10, md: 12, sm: 12, xs: 12 }}>
               <Grid container spacing={4}>
                 <Grid size={12}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 1
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 0.5,
-                      }}
-                    >
-                      {[...Array(3)].map((_, ind) => (
-                        <LessThanIcon key={ind} />
-                      ))}
-                    </Box>
-                    <Typography variant="body1" sx={{ fontFamily: "Manrope", color: "#6D7076" }}>Our Testimonial</Typography>
-                    <Box
-                      sx={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 0.5,
-                      }}
-                    >
-                      {[...Array(3)].map((_, ind) => (
-                        <GreaterThanIcon key={ind} />
-                      ))}
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid size={12}>
-                  <Typography variant="h4" sx={{ fontSize: "40px", fontFamily: "Urbanist", fontWeight: 800 }}>What Our Student are Saying?</Typography>
-                </Grid>
-                <Grid size={12} sx={{ mt: 6 }}>
-                  <Grid container spacing={4}>
-                    {reviewsData.map((item, ind) => (
-                      <Grid key={ind} size={{ xl: 4, lg: 4, md: 4, sm: 6, xs: 12 }} sx={{ display: "flex" }}>
-                        <Box
-                          sx={{
-                            background: Colors.white,
-                            position: "relative",
-                            p: 4,
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "flex-end",
-                            gap: 4,
-                            boxShadow: "0px 0px 15px 5px #a9a9a91d"
-                          }}
-                        >
-                          <Box
-                            sx={{
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "center",
-                              gap: 2,
-                              position: "absolute",
-                              top: "-47px",
-                              right: "50%",
-                              transform: "translate(50%, 0%)"
-                            }}
-                          >
-                            <QuoteIcon />
-                            <Box
-                              sx={{
-                                display: "flex",
-                                gap: 0.5
-                              }}
-                            >
-                              {[...Array(5)].map((_, ind) => (
-                                <StarIcon key={ind} />
-                              ))}
-                            </Box>
-                          </Box>
-                          <Box sx={{ mt: 8 }}>
-                            <Typography variant='body1' sx={{ fontFamily: "Manrope", color: "#6D7076", lineHeight: "30px" }}>{item.review}</Typography>
-                          </Box>
-                          <Box
-                            sx={{
-                              position: "relative",
-                              background: Colors.soft_gray,
-                              height: "65px",
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center"
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                width: "55px",
-                                height: "55px",
-                                borderRadius: "50%",
-                                background: "#2A2A30",
-                                border: "4px solid #FFFFFF",
-                                position: "absolute",
-                                top: -32,
-                                left: 32,
-                              }}
-                            />
-                            <Typography variant="h6" sx={{ mt: 1, fontSize: "20px", fontFamily: "Urbanist", fontWeight: 600 }}>{item.user}</Typography>
-                          </Box>
-                        </Box>
+                  <Grid container justifyContent={"center"}>
+                    <Grid size={{ xl: 10, lg: 10, md: 10, sm: 12, xs: 12 }}>
+                      <Grid container spacing={4}>
+                        <Grid size={12}>
+                          <Grid container>
+                            <Grid size={12}>
+                              <Box
+                                sx={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: 1
+                                }}
+                              >
+                                <Box
+                                  sx={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: 0.5,
+                                  }}
+                                >
+                                  {[...Array(3)].map((_, ind) => (
+                                    <LessThanIcon key={ind} />
+                                  ))}
+                                </Box>
+                                <Typography variant="body1" sx={{ fontFamily: "Manrope", color: "#6D7076" }}>Our Testimonial</Typography>
+                                <Box
+                                  sx={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: 0.5,
+                                  }}
+                                >
+                                  {[...Array(3)].map((_, ind) => (
+                                    <GreaterThanIcon key={ind} />
+                                  ))}
+                                </Box>
+                              </Box>
+                            </Grid>
+                            <Grid size={12}>
+                              <Typography variant="h4" sx={{ fontSize: "40px", fontFamily: "Urbanist", fontWeight: 800 }}>What Our Student are Saying?</Typography>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                        <Grid size={12} sx={{ mt: 6 }}>
+                          <Grid container spacing={4}>
+                            {reviewsData.map((item, ind) => (
+                              <Grid key={ind} size={{ xl: 4, lg: 4, md: 4, sm: 6, xs: 12 }} sx={{ display: "flex" }}>
+                                <Box
+                                  sx={{
+                                    background: Colors.white,
+                                    position: "relative",
+                                    p: 4,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "flex-end",
+                                    gap: 4,
+                                    boxShadow: "0px 0px 15px 5px #a9a9a91d"
+                                  }}
+                                >
+                                  <Box
+                                    sx={{
+                                      display: "flex",
+                                      flexDirection: "column",
+                                      alignItems: "center",
+                                      gap: 2,
+                                      position: "absolute",
+                                      top: "-47px",
+                                      right: "50%",
+                                      transform: "translate(50%, 0%)"
+                                    }}
+                                  >
+                                    <QuoteIcon />
+                                    <Box
+                                      sx={{
+                                        display: "flex",
+                                        gap: 0.5
+                                      }}
+                                    >
+                                      {[...Array(5)].map((_, ind) => (
+                                        <StarIcon key={ind} />
+                                      ))}
+                                    </Box>
+                                  </Box>
+                                  <Box sx={{ mt: 8 }}>
+                                    <Typography variant='body1' sx={{ fontFamily: "Manrope", color: "#6D7076", lineHeight: "30px" }}>{item.review}</Typography>
+                                  </Box>
+                                  <Box
+                                    sx={{
+                                      position: "relative",
+                                      background: Colors.soft_gray,
+                                      height: "65px",
+                                      display: "flex",
+                                      justifyContent: "center",
+                                      alignItems: "center"
+                                    }}
+                                  >
+                                    <Box
+                                      sx={{
+                                        width: "55px",
+                                        height: "55px",
+                                        borderRadius: "50%",
+                                        background: "#2A2A30",
+                                        border: "4px solid #FFFFFF",
+                                        position: "absolute",
+                                        top: -32,
+                                        left: 32,
+                                      }}
+                                    />
+                                    <Typography variant="h6" sx={{ mt: 1, fontSize: "20px", fontFamily: "Urbanist", fontWeight: 600 }}>{item.user}</Typography>
+                                  </Box>
+                                </Box>
+                              </Grid>
+                            ))}
+                          </Grid>
+                        </Grid>
                       </Grid>
-                    ))}
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>

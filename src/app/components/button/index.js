@@ -21,6 +21,7 @@ function PrimaryButton({ startIcon, endIcon, title, color, boxShadow, ...props }
         borderRadius: 0,
         p: "15px 20px",
         ":hover": {
+          background: color ? Colors.deep_blue : Colors.primary,
           boxShadow: boxShadow ? boxShadow : "none"
         }
       }}

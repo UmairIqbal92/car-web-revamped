@@ -13,10 +13,12 @@ import {
   Menu,
   MenuItem,
   ListItemButton,
+  ListItemIcon,
 } from '@mui/material';
-import { FacebookIcon, TwitterIcon, PinterestIcon, InstagramIcon } from "@/app/assets/icons";
+import { FacebookIcon, TwitterIcon, PinterestIcon, InstagramIcon, ExpandMore } from "@/app/assets/icons";
 import "@fontsource/manrope";
 import "@fontsource/urbanist";
+import "@fontsource/urbanist/700.css";
 import Images from '@/app/assets/images';
 import Colors from '@/app/assets/styles';
 import Link from 'next/link';
@@ -40,23 +42,16 @@ const services = [
 ]
 
 function Header() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const timeoutRef = useRef();
 
   const handleOpen = (e) => {
-    clearTimeout(timeoutRef.current);
     setAnchorEl(e.currentTarget);
   };
 
   const handleClose = () => {
-    timeoutRef.current = setTimeout(() => {
-      setAnchorEl(null);
-    }, 150);
-  };
-
-  const cancelClose = () => {
-    clearTimeout(timeoutRef.current);
+    setAnchorEl(null);
   };
 
   return (
@@ -68,7 +63,7 @@ function Header() {
             <Grid size={1.8}>
               <Box
                 sx={{
-                  px: { xl: 6, lg: 5.5, md: 3, sm: 2, xs: 1 },
+                  px: { xl: 6, lg: "46px", md: 3, sm: 2, xs: 1 },
                   display: "flex",
                   alignItems: "center",
                   gap: 1
@@ -86,7 +81,7 @@ function Header() {
                   color: 'white',
                   px: 7,
                   py: "15px",
-                  clipPath: 'polygon(3.2% 0, 100% 0, 100% 100%, 0% 100%)',
+                  clipPath: 'polygon(2.8% 0, 100% 0, 100% 100%, 0% 100%)',
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between"
@@ -118,7 +113,7 @@ function Header() {
         {/* Logo with angled background */}
         <Box sx={{ backgroundColor: '#ffffff', display: { xl: "block", lg: "block", md: "block", sm: "none", xs: "none" } }}>
           <Grid container>
-            <Grid size={1.9}>
+            <Grid size={2.1}>
               <Box
                 sx={{
                   px: { xl: 5, lg: 4, md: 3, sm: 2, xs: 1 },
@@ -126,31 +121,33 @@ function Header() {
                   backgroundColor: '#111118',
                   display: 'flex',
                   alignItems: 'center',
-                  clipPath: 'polygon(0% 0%, 95% 0%, 55.5% 100%, 0% 100%)',
+                  clipPath: 'polygon(0% 0%, 86% 0%, 55.5% 100%, 0% 100%)',
                 }}
               >
-                <Image
-                  src={Images.logo.src}
-                  alt="Logo"
-                  width={104}
-                  height={74}
-                  style={{
-                    objectFit: "cover"
-                  }}
-                />
+                <Link href={"/"} passHref>
+                  <Image
+                    src={Images.logo.src}
+                    alt="Logo"
+                    width={104}
+                    height={74}
+                    style={{
+                      objectFit: "cover"
+                    }}
+                  />
+                </Link>
               </Box>
             </Grid>
 
-            <Grid size={10.1}>
+            <Grid size={9.9}>
               <Grid container sx={{ height: "100%" }}>
                 <Grid size={8} sx={{ position: "relative" }}>
                   <List sx={{ display: "flex", gap: 1, height: "100%", py: 0, justifyContent: "center" }}>
                     {Navigations.map((item, ind) => (
                       <Fragment key={ind}>
                         {item.name === "Tjänster" ? (
-                          <ListItem key={ind} sx={{ justifyContent: "center", width: "auto" }}>
+                          <ListItem key={ind} sx={{ justifyContent: "center", width: "auto" }} disablePadding>
                             <ListItemButton
-                              onMouseEnter={handleOpen}
+                              onClick={(e) => handleOpen(e)}
                             >
                               <Typography
                                 variant='subtitle1'
@@ -165,10 +162,11 @@ function Header() {
                               >
                                 {item.name}
                               </Typography>
+                              <ListItemIcon sx={{ minWidth: "24px" }}><ExpandMore /></ListItemIcon>
                             </ListItemButton>
                           </ListItem>
                         ) : (
-                          <ListItem key={ind} sx={{ justifyContent: "center", width: "auto" }}>
+                          <ListItem key={ind} sx={{ justifyContent: "center", width: "auto" }} disablePadding>
                             <Link href={item.path} passHref style={{ textDecoration: "none" }} >
                               <ListItemButton>
                                 <Typography
@@ -203,7 +201,6 @@ function Header() {
                           width: "290px",
                           borderRadius: 0
                         },
-                        onMouseLeave: handleClose
                       },
                       list: {
                         sx: {
@@ -285,15 +282,21 @@ function Header() {
                   >
                     {[FacebookIcon, TwitterIcon, PinterestIcon, InstagramIcon].map((Icon, ind) => (
                       <IconButton
+                        onMouseEnter={() => setHoveredIndex(ind)}
+                        onMouseLeave={() => setHoveredIndex(null)}
                         key={ind}
                         sx={{
                           width: "36px",
                           height: "36px",
                           background: Colors.white + "0D",
-                          borderRadius: 0
+                          borderRadius: 0,
+                          ":hover": {
+                            background: Colors.primary,
+                            color: Colors.white
+                          }
                         }}
                       >
-                        <Icon />
+                        <Icon hover={hoveredIndex === ind} />
                       </IconButton>
                     ))}
                   </Box>
