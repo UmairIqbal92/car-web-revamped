@@ -12,6 +12,8 @@ function PrimaryButton({ startIcon, endIcon, title, color, boxShadow, ...props }
       startIcon={startIcon}
       endIcon={endIcon}
       sx={{
+        minWidth: "200px",
+        width: "auto",
         background: color ? color : Colors.deep_blue,
         boxShadow: boxShadow ? boxShadow : "none",
         textTransform: "capitalize",

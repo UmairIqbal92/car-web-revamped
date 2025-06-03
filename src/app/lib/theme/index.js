@@ -1,14 +1,15 @@
 'use client';
 
+import Colors from '@/app/assets/styles';
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: Colors.primary,
     },
     secondary: {
-      main: '#dc004e',
+      main: Colors.deep_blue,
     },
   },
   breakpoints: {
