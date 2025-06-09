@@ -1,15 +1,15 @@
 .swiper .swiper-scrollbar {
-  bottom: -48px;
+  bottom: -48px !important;
 }
 
 .swiper-scrollbar-drag {
-  background: #E62424;
+  background: #E62424 !important;
 }
 
 .about-review-slider .swiper-scrollbar {
-  bottom: -96px;
+  bottom: -96px !important;
 }
 
 .about-review-slider>* .swiper-scrollbar-drag {
-  background: #FFFFFF;
+  background: #FFFFFF !important;
 }
