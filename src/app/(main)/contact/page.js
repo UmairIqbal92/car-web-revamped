@@ -139,16 +139,27 @@ function Contact() {
           </Grid>
           <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}
             sx={{
-              background: `url(${Images.contact_sec_2_2_bg_img.src})no-repeat right center`,
-              backgroundSize: "cover"
+              position: "relative"
             }}
           >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1953.6938788920286!2d17.135829376700567!3d60.681113602093674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4660c7db339e7d67%3A0x7c2b3b8e173e9aa4!2sSTRINDBERGS%20BILV%C3%85RD!5e0!3m2!1sen!2s!4v1749475336064!5m2!1sen!2s"
+              style={{ border: 0, width: "100%", height: "100%" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
             <Box
               sx={{
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)"
               }}
             >
               <Box

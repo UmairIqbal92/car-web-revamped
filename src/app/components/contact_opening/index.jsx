@@ -30,11 +30,11 @@ function Contact_Opening() {
               gap: 3,
             }}
           >
-            <Typography variant="h2" sx={{ fontSize: { xl: 64, lg: 64, md: 48, sm: 48, xs: 64 }, fontWeight: 700, fontFamily: "Urbanist", color: Colors.white, textAlign: "center" }}>Kontakt</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>Telefon: 123-456789</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>E-post: support@abcdefgh.se</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>Flex Shop</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>99822 541 Navle</Typography>
+            <Typography variant="h2" sx={{ fontSize: { xl: 64, lg: 64, md: 48, sm: 48, xs: 48 }, fontWeight: 700, fontFamily: "Urbanist", color: Colors.white, textAlign: "center" }}>Kontakt</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>Telefon: 123-456789</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>E-post: support@abcdefgh.se</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>Flex Shop</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>99822 541 Navle</Typography>
           </Box>
         </Box>
       </Grid>
@@ -60,11 +60,11 @@ function Contact_Opening() {
               gap: 3,
             }}
           >
-            <Typography variant="h2" sx={{ fontSize: { xl: 64, lg: 64, md: 48, sm: 48, xs: 64 }, fontWeight: 700, fontFamily: "Urbanist", color: Colors.white, textAlign: "center" }}>ÖPPET</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}> Mån – Fre            08:00 – 17:00</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}> Lördag                10:00 – 15:00</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>Lunchstängt        12:00 – 13:00</Typography>
-            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 32 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>(vardagar)</Typography>
+            <Typography variant="h2" sx={{ fontSize: { xl: 64, lg: 64, md: 48, sm: 48, xs: 48 }, fontWeight: 700, fontFamily: "Urbanist", color: Colors.white, textAlign: "center" }}>ÖPPET</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}> Mån – Fre            08:00 – 17:00</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}> Lördag                10:00 – 15:00</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>Lunchstängt        12:00 – 13:00</Typography>
+            <Typography variant="h3" sx={{ fontSize: { xl: 32, lg: 32, md: 20, sm: 20, xs: 20 }, fontWeight: 600, fontFamily: "Manrope", color: Colors.white, textAlign: "center" }}>(vardagar)</Typography>
           </Box>
         </Box>
       </Grid>

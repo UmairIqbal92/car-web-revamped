@@ -1,0 +1,17 @@
+.swiper>* .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: -48px;
+}
+
+.swiper-scrollbar-drag {
+  background: #E62424;
+}
+
+.about-review-slider .swiper>* .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: -96px;
+}
+
+.about-review-slider>* .swiper-scrollbar-drag {
+  background: #FFFFFF;
+}

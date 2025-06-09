@@ -110,3 +110,28 @@
 a.page_link__36MaQ {
   text-decoration: none !important;
 }
+
+.page_swiper-button-prev__FzIkv,
+.page_swiper-button-next__rjq0s {
+  display: none
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.swiper>* .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: -48px;
+}
+
+.swiper-scrollbar-drag {
+  background: #E62424;
+}
+
+.about-review-slider .swiper>* .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: -96px;
+}
+
+.about-review-slider>* .swiper-scrollbar-drag {
+  background: #FFFFFF;
+}

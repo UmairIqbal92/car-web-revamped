@@ -3,7 +3,7 @@
 import React, { Fragment, useRef, useState } from 'react';
 import { Box, Button, CardMedia, Container, Grid, IconButton, List, ListItem, Typography } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Autoplay, Navigation } from "swiper/modules";
+import { EffectFade, Autoplay, Navigation, Scrollbar } from "swiper/modules";
 import { ArrowdownIcon, ChatIcon, GreaterThanIcon, LessThanIcon, PhoneIcon2, QuoteIcon, StarIcon } from '@/app/assets/icons';
 import CircularProgress from '@/app/components/circular_progress';
 import PrimaryButton from '@/app/components/button';
@@ -12,11 +12,13 @@ import Colors from '@/app/assets/styles';
 import "@fontsource/roboto";
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import 'swiper/css/scrollbar';
 import Link from 'next/link';
 import "@fontsource/urbanist";
 import "@fontsource/urbanist/900.css";
 import "@fontsource/urbanist/800.css";
 import "@fontsource/urbanist/700.css";
+import "../globals.css";
 
 const slides = [Images.hero_image.src, Images.hero_image.src, Images.hero_image.src];
 
@@ -92,6 +94,18 @@ const reviewsData = [
     review: "Lämnade in bilen för hjulskifte och rekond. Allt gick snabbt och smidigt. Rekommenderar Strindbergs Bilvård varmt!",
     user: " Lisa Lee"
   },
+  {
+    review: "Fantastisk service och mycket kunnig personal. Jag lämnade in bilen för bromsbyte och rekond – kom tillbaka som ny!",
+    user: "Umair T."
+  },
+  {
+    review: "Otroligt nöjd med resultatet! Min bil fick både service och plåtskador fixade. Personalen är vänlig och pålitlig.",
+    user: "Alex Hammarström"
+  },
+  {
+    review: "Lämnade in bilen för hjulskifte och rekond. Allt gick snabbt och smidigt. Rekommenderar Strindbergs Bilvård varmt!",
+    user: " Lisa Lee"
+  },
 ];
 
 export default function Home() {
@@ -115,7 +129,6 @@ export default function Home() {
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               onSlideChange={handleSlideChange}
               modules={[EffectFade, Autoplay, Navigation]}
-              navigation={true}
               effect={"fade"}
               autoplay={{
                 delay: 2500,
@@ -138,8 +151,8 @@ export default function Home() {
                     <Typography
                       variant="h1"
                       sx={{
-                        top: "12%",
-                        right: "12%",
+                        top: { xl: "12%", lg: "12%", md: "12%", sm: "12%", xs: "8%" },
+                        right: { xl: "12%", lg: "12%", md: "12%", sm: "12%", xs: "8%" },
                         position: "absolute",
                         fontFamily: "Roboto",
                         fontWeight: 700,
@@ -151,9 +164,9 @@ export default function Home() {
                         flexDirection: "column"
                       }}
                     >
-                      <Typography component={"span"} sx={{ fontSize: { xl: 60, lg: 50, md: 40, sm: 30, xs: 30 } }}>VÄLKOMMEN TILL</Typography>
-                      <Typography component={"span"} sx={{ fontSize: { xl: 75, lg: 65, md: 55, sm: 45, xs: 45 } }}>STRINDBERGS BILVÅRD</Typography>
-                      <Typography component={"span"} sx={{ fontSize: { xl: 60, lg: 50, md: 40, sm: 30, xs: 30 }, color: Colors.primary }}>VI HAR ALLT FÖR DIN BIL</Typography>
+                      <Typography component={"span"} sx={{ fontSize: { xl: 60, lg: 50, md: 40, sm: 20, xs: 20 } }}>VÄLKOMMEN TILL</Typography>
+                      <Typography component={"span"} sx={{ fontSize: { xl: 75, lg: 65, md: 55, sm: 32, xs: 28 } }}>STRINDBERGS BILVÅRD</Typography>
+                      <Typography component={"span"} sx={{ fontSize: { xl: 60, lg: 50, md: 40, sm: 24, xs: 22 }, color: Colors.primary }}>VI HAR ALLT FÖR DIN BIL</Typography>
                     </Typography>
                     <Box
                       sx={{
@@ -173,8 +186,8 @@ export default function Home() {
                         p: "8px 16px",
                         gap: { xl: "24px", lg: "24px", md: "16px", sm: "6px", xs: "6px" },
                         position: "absolute",
-                        bottom: { xl: "20%", lg: "20%", md: "20%", sm: "20%", xs: "20%" },
-                        right: { xl: "22%", lg: "21%", md: "16%", sm: "20%", xs: "0" }
+                        bottom: { xl: "20%", lg: "20%", md: "20%", sm: "20%", xs: "0%" },
+                        right: { xl: "22%", lg: "21%", md: "16%", sm: "10%", xs: "10%" }
                       }}
                     >
                       {slides.map((_, index) => (
@@ -476,12 +489,13 @@ export default function Home() {
                 sx={{
                   mt: 3,
                   display: "flex",
-                  justifyContent: { xl: "flex-start", lg: "flex-start", md: "flex-start", sm: "center", xs: "center" },
+                  flexDirection: { xl: "row", lg: "row", md: "row", sm: "row", xs: "column" },
+                  justifyContent: { xl: "flex-start", lg: "flex-start", md: "flex-start", sm: "flex-start", xs: "stretch" },
                   gap: 2
                 }}
               >
-                <PrimaryButton color={Colors.primary} title={"Know More"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
-                <PrimaryButton startIcon={<PhoneIcon2 />} title={"+811 456 34563"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
+                <PrimaryButton fullWidth={true} color={Colors.primary} title={"Know More"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
+                <PrimaryButton fullWidth={true} startIcon={<PhoneIcon2 />} title={"+811 456 34563"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
               </Box>
             </Grid>
             <Grid size={{ xl: 6.5, lg: 6.5, md: 7.5, sm: 12, xs: 12 }}>
@@ -650,7 +664,7 @@ export default function Home() {
                 <Grid size={12}>
                   <Grid container justifyContent={"center"}>
                     <Grid size={{ xl: 10, lg: 10, md: 10, sm: 12, xs: 12 }}>
-                      <Grid container spacing={4}>
+                      <Grid container spacing={4} sx={{ px: 2, overflow: "hidden" }}>
                         <Grid size={12}>
                           <Grid container>
                             <Grid size={12}>
@@ -691,10 +705,30 @@ export default function Home() {
                             </Grid>
                           </Grid>
                         </Grid>
-                        <Grid size={12} sx={{ mt: 6 }}>
-                          <Grid container spacing={4}>
+                        <Grid size={12} sx={{ my: 6 }}>
+                          <Swiper
+                            modules={[Navigation, Scrollbar, Autoplay]}
+                            spaceBetween={40}
+                            breakpoints={{
+                              0: {
+                                slidesPerView: 1
+                              },
+                              768: {
+                                slidesPerView: 2
+                              },
+                              1280: {
+                                slidesPerView: 3
+                              },
+                            }}
+                            scrollbar={{ draggable: true }}
+                            style={{ overflow: "visible" }}
+                            autoplay={{
+                              delay: 2500,
+                              disableOnInteraction: true,
+                            }}
+                          >
                             {reviewsData.map((item, ind) => (
-                              <Grid key={ind} size={{ xl: 4, lg: 4, md: 4, sm: 6, xs: 12 }} sx={{ display: "flex" }}>
+                              <SwiperSlide key={ind} style={{ display: "flex" }}>
                                 <Box
                                   sx={{
                                     background: Colors.white,
@@ -759,9 +793,9 @@ export default function Home() {
                                     <Typography variant="h6" sx={{ mt: 1, fontSize: "20px", fontFamily: "Urbanist", fontWeight: 600 }}>{item.user}</Typography>
                                   </Box>
                                 </Box>
-                              </Grid>
+                              </SwiperSlide>
                             ))}
-                          </Grid>
+                          </Swiper>
                         </Grid>
                       </Grid>
                     </Grid>

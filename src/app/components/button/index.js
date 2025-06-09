@@ -5,15 +5,16 @@ import { Button } from '@mui/material';
 import Colors from '@/app/assets/styles';
 import "@fontsource/outfit";
 
-function PrimaryButton({ startIcon, endIcon, title, color, boxShadow, ...props }) {
+function PrimaryButton({ startIcon, endIcon, title, color, boxShadow, fullWidth, ...props }) {
   return (
     <Button
+      fullWidth={fullWidth}
       variant={"contained"}
       startIcon={startIcon}
       endIcon={endIcon}
       sx={{
-        minWidth: "200px",
-        width: "auto",
+        minWidth: fullWidth ? "unset" : "200px",
+        width: fullWidth ? "100%" : "auto",
         background: color ? color : Colors.deep_blue,
         boxShadow: boxShadow ? boxShadow : "none",
         textTransform: "capitalize",

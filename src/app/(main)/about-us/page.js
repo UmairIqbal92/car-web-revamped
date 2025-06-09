@@ -7,8 +7,25 @@ import Colors from '@/app/assets/styles';
 import "@fontsource/urbanist";
 import { AchievementIcon, GreaterThanIcon, GreaterThanIcon2, LessThanIcon, LessThanIcon2, QuoteIcon, StarIcon } from '@/app/assets/icons';
 import PrimaryButton from '@/app/components/button';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Scrollbar } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import "../../globals.css"
 
 const reviewsData = [
+  {
+    review: "Fantastisk service och mycket kunnig personal. Jag lämnade in bilen för bromsbyte och rekond – kom tillbaka som ny!",
+    user: "Umair T."
+  },
+  {
+    review: "Otroligt nöjd med resultatet! Min bil fick både service och plåtskador fixade. Personalen är vänlig och pålitlig.",
+    user: "Alex Hammarström"
+  },
+  {
+    review: "Lämnade in bilen för hjulskifte och rekond. Allt gick snabbt och smidigt. Rekommenderar Strindbergs Bilvård varmt!",
+    user: " Lisa Lee"
+  },
   {
     review: "Fantastisk service och mycket kunnig personal. Jag lämnade in bilen för bromsbyte och rekond – kom tillbaka som ny!",
     user: "Umair T."
@@ -214,7 +231,7 @@ function About() {
         <Container maxWidth="xl">
           <Grid container justifyContent={"center"}>
             <Grid size={{ xl: 10, lg: 11, md: 12, sm: 12, xs: 12 }}>
-              <Grid container spacing={4}>
+              <Grid container spacing={4} sx={{ overflow: "hidden" }}>
                 <Grid size={12}>
                   <Box
                     sx={{
@@ -252,10 +269,31 @@ function About() {
                 <Grid size={12}>
                   <Typography variant="h3" sx={{ fontFamily: "Urbanist", color: Colors.white, fontWeight: 800, fontSize: "40px", textAlign: "center" }}>See What Students are Talking About?</Typography>
                 </Grid>
-                <Grid size={12} sx={{ mt: 6 }}>
-                  <Grid container spacing={4} rowSpacing={{ xl: 0, lg: 0, md: 0, sm: 8, xs: 8 }}>
+                <Grid size={12} sx={{ mt: 6, mb: 12 }}>
+                  <Swiper
+                    className='about-review-slider'
+                    modules={[Scrollbar, Autoplay]}
+                    spaceBetween={40}
+                    breakpoints={{
+                      0: {
+                        slidesPerView: 1
+                      },
+                      768: {
+                        slidesPerView: 2
+                      },
+                      1280: {
+                        slidesPerView: 3
+                      },
+                    }}
+                    scrollbar={{ draggable: true }}
+                    style={{ overflow: "visible" }}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: true,
+                    }}
+                  >
                     {reviewsData.map((item, ind) => (
-                      <Grid key={ind} size={{ xl: 4, lg: 4, md: 4, sm: 6, xs: 12 }} sx={{ display: "flex" }}>
+                      <SwiperSlide key={ind} style={{ display: "flex" }}>
                         <Box
                           sx={{
                             background: Colors.white,
@@ -331,9 +369,9 @@ function About() {
                             }}
                           />
                         </Box>
-                      </Grid>
+                      </SwiperSlide>
                     ))}
-                  </Grid>
+                  </Swiper>
                 </Grid>
               </Grid>
             </Grid>
@@ -345,7 +383,7 @@ function About() {
               <Box
                 sx={{
                   p: 4,
-                  border: `8px solid ${Colors.deep_blue}`,
+                  border: `2px solid ${Colors.deep_blue}`,
                   borderRadius: 6,
                   bottom: { xl: -140, lg: -140, md: -140, sm: -64, xs: -64 },
                   height: "335px",
