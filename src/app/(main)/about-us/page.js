@@ -395,7 +395,7 @@ function About() {
               >
                 <Grid container rowSpacing={2}>
                   <Grid size={{ xl: 5, lg: 5, md: 12, sm: 12, xs: 12 }}>
-                    <Typography variant="h4" sx={{ fontFamily: "Urbanist", fontSize: "40px", fontWeight: 900, color: Colors.white }}>Har du någon fråga? Välkommen att kontakta oss 1231313131313</Typography>
+                    <Typography variant="h4" sx={{ fontFamily: "Urbanist", fontSize: { md: "40px", sm: "32px", xs: "32px" }, fontWeight: 900, color: Colors.white }}>Har du någon fråga? Välkommen att kontakta oss 1231313131313</Typography>
                   </Grid>
                   <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
                     <PrimaryButton title={"Book Now"} />
