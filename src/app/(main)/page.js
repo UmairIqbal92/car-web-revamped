@@ -18,7 +18,7 @@ import "@fontsource/urbanist";
 import "@fontsource/urbanist/900.css";
 import "@fontsource/urbanist/800.css";
 import "@fontsource/urbanist/700.css";
-import "../globals.css";
+import "@/app/globals.css";
 
 const slides = [Images.hero_image.src, Images.hero_image.src, Images.hero_image.src];
 

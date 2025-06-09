@@ -7,7 +7,6 @@ import ThemeRegistry from "./../lib/theme_registry";
 import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
 import Colors from '../assets/styles';
-import "./../globals.css";
 
 export default function MainTemplate({ children }) {
   const pathname = usePathname();

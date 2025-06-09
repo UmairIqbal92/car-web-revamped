@@ -6,7 +6,7 @@
   background: #E62424;
 }
 
-.about-review-slider>* .swiper-scrollbar.swiper-scrollbar-horizontal {
+.about-review-slider .swiper-scrollbar {
   bottom: -96px;
 }
 
