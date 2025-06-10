@@ -7,6 +7,7 @@ import ThemeRegistry from "./../lib/theme_registry";
 import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
 import Colors from '../assets/styles';
+import ToasterContainer from '../components/toaster';
 
 export default function MainTemplate({ children }) {
   const pathname = usePathname();
@@ -20,6 +21,7 @@ export default function MainTemplate({ children }) {
 
   return (
     <ThemeRegistry>
+      <ToasterContainer />
       {loading ? (
         <Box
           sx={{

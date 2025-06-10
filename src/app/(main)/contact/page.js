@@ -10,6 +10,7 @@ import "@fontsource/urbanist";
 import Images from '@/app/assets/images';
 import Colors from '@/app/assets/styles';
 import PrimaryButton from '@/app/components/button';
+import { ErrorToaster, SuccessToaster } from '@/app/components/toaster';
 
 const CustomTextField = styled(TextField)({
   background: Colors.soft_gray,
@@ -54,32 +55,26 @@ function Contact() {
     setCaptchaToken(token);
   };
 
-  const onSubmit = (formData) => {
-    // if (!captchaToken) {
-    //   alert("Please verify you're not a robot");
-    //   return;
-    // } else {
-    emailjs.sendForm(
-      process.env.NEXT_PUBLIC_SERVICE_ID,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      formRef.current,
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-          reset();
-        },
+  const onSubmit = () => {
+    if (!captchaToken) {
+      ErrorToaster("Please verify you're not a robot");
+      return;
+    } else {
+      emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      ).then(() => {
+        SuccessToaster("Message sent successfully!");
+        reset();
+      },
         (error) => {
-          console.log(error.text);
-          alert("Error sending message.");
-        }
-      );
-    // }
+          ErrorToaster(error.text);
+        });
+    }
   };
 
-  console.log("🚀 ~ Contact ~ process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY:", process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
   return (
     <Fragment>
       <Box component={"section"}
