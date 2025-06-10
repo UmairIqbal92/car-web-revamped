@@ -13,7 +13,6 @@ const CircularProgress = ({ percentage = 99, size = 220, strokeWidth = 2, durati
   const isLg = useMediaQuery(theme.breakpoints.down("xl"));
 
   const responsizeSize = isXs ? size - 120 : isSm ? size - 80 : isMd ? size - 40 : size
-  console.log("🚀 ~ CircularProgress ~ responsizeSize:", responsizeSize)
 
   const radius = (responsizeSize - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;

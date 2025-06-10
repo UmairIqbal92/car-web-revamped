@@ -79,6 +79,7 @@ function Contact() {
     // }
   };
 
+  console.log("🚀 ~ Contact ~ process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY:", process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
   return (
     <Fragment>
       <Box component={"section"}
