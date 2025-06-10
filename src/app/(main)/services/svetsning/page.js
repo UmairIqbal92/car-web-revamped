@@ -1,23 +1,14 @@
 'use client';
 
 import React, { Fragment, useState } from 'react';
-import { Box, CardMedia, Collapse, Container, Grid, TextField, Typography, styled } from '@mui/material';
+import { Box, Collapse, Container, Grid, Typography } from '@mui/material';
 import Images from '@/app/assets/images';
 import Colors from '@/app/assets/styles';
 import "@fontsource/wix-madefor-text";
 import "@fontsource/poppins";
 import PrimaryButton from '@/app/components/button';
 import Contact_Opening from '@/app/components/contact_opening';
-
-const CustomTextField = styled(TextField)({
-  background: "#EEF4FF",
-  "& .MuiOutlinedInput-root": {
-    fontFamily: "Poppins",
-    // "& fieldset": {
-    //   border: "none"
-    // }
-  }
-});
+import InputField from '@/app/components/inputfield';
 
 function Svetsning() {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -118,7 +109,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Förnamn <span style={{ color: Colors.primary }}>*</span></Typography>
-                                <CustomTextField placeholder="e.g: John" />
+                                <InputField placeholder="e.g: John" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -130,7 +121,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Efternamn <span style={{ color: Colors.primary }}>*</span></Typography>
-                                <CustomTextField placeholder="e.g: Doe" />
+                                <InputField placeholder="e.g: Doe" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -142,7 +133,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Din email <span style={{ color: Colors.primary }}>*</span></Typography>
-                                <CustomTextField placeholder="e.g: john.doe@example.com" />
+                                <InputField placeholder="e.g: john.doe@example.com" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -154,7 +145,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Telefonnummer <span style={{ color: Colors.primary }}>*</span></Typography>
-                                <CustomTextField placeholder="e.g: 123456789" />
+                                <InputField placeholder="e.g: 123456789" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -166,7 +157,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Registreringsnummer</Typography>
-                                <CustomTextField placeholder="e.g: 123456789" />
+                                <InputField placeholder="e.g: 123456789" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -178,7 +169,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Märke (t.ex. Ford)</Typography>
-                                <CustomTextField placeholder="e.g: Ford" />
+                                <InputField placeholder="e.g: Ford" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -190,7 +181,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Modell (t.ex. Mustang)</Typography>
-                                <CustomTextField placeholder="e.g: Mustang" />
+                                <InputField placeholder="e.g: Mustang" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 6, xs: 12 }}>
@@ -202,7 +193,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Totalbelopp</Typography>
-                                <CustomTextField placeholder="e.g: 123" />
+                                <InputField placeholder="e.g: 123" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
@@ -214,7 +205,7 @@ function Svetsning() {
                                 }}
                               >
                                 <Typography variant="body1" sx={{ fontSize: 18, fontWeight: 600, fontFamily: "Poppins" }}>Skriv ditt meddelande</Typography>
-                                <CustomTextField multiline={true} rows={7} placeholder="Message" />
+                                <InputField multiline={true} rows={7} placeholder="Message" />
                               </Box>
                             </Grid>
                             <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>

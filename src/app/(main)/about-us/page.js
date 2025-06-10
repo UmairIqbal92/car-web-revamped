@@ -120,7 +120,7 @@ function About() {
                           flexDirection: "column",
                         }}
                       >
-                        <Typography variant="body1" sx={{ fontFamily: "Urbanist", fontSize: "20px", fontWeight: 800, color: Colors.white }}>STRINDBERGS BILVÅRD</Typography>
+                        <Typography variant="body1" sx={{ fontFamily: "Urbanist", fontSize: { xl: "20px", lg: "20px", md: " 18px", sm: "16px", xs: "14px" }, fontWeight: 800, color: Colors.white }}>STRINDBERGS BILVÅRD</Typography>
                         <Typography variant="body2" sx={{ fontFamily: "Manrope", color: Colors.white }}>bäst i branschen</Typography>
                       </Box>
                     </Box>
@@ -175,10 +175,10 @@ function About() {
                         }}
                       >
                         <Box>
-                          <Typography variant="h1" sx={{ fontSize: { xl: "80px", lg: "74px", md: "68px", sm: "62px", xs: "54px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.black }}>
+                          <Typography variant="h1" sx={{ fontSize: { xl: "80px", lg: "74px", md: "64px", sm: "56px", xs: "48px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.black }}>
                             STRINDBERGS
                           </Typography>
-                          <Typography variant="h2" sx={{ fontSize: { xl: "80px", lg: "74px", md: "68px", sm: "62px", xs: "54px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.primary }}>
+                          <Typography variant="h2" sx={{ fontSize: { xl: "80px", lg: "74px", md: "64px", sm: "56px", xs: "48px" }, fontFamily: "Urbanist", fontWeight: 900, color: Colors.primary }}>
                             BILVÅRD
                           </Typography>
                         </Box>

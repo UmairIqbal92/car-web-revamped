@@ -13,8 +13,8 @@ function PrimaryButton({ startIcon, endIcon, title, color, boxShadow, fullWidth,
       startIcon={startIcon}
       endIcon={endIcon}
       sx={{
-        minWidth: fullWidth ? "unset" : "200px",
-        width: fullWidth ? "100%" : "auto",
+        flexShrink: 1,
+        minWidth: { xl: "200px", lg: "200px", md: "140px", sm: "120px", xs: "80px" },
         background: color ? color : Colors.deep_blue,
         boxShadow: boxShadow ? boxShadow : "none",
         textTransform: "capitalize",

@@ -188,7 +188,15 @@ function Header() {
           ))}
         </List>
       </Drawer>
-      <Box sx={{ background: { md: `linear-gradient(45deg, ${Colors.deep_blue} 50%, ${Colors.primary} 50%)`, sm: `linear-gradient(45deg, ${Colors.deep_blue} 50%, ${Colors.primary} 50%)`, xs: `linear-gradient(45deg, ${Colors.deep_blue} 50%, ${Colors.primary} 50%)`, } }} >
+      <Box
+        component={"header"}
+        sx={{
+          //   position: { xl: "static", lg: "static", md: "static", sm: "sticky", xs: "sticky" },
+          //   top: { xl: 0, lg: 0, md: 0, sm: 0, xs: 0 },
+          //   zIndex: 111,
+          background: { md: `linear-gradient(45deg, ${Colors.deep_blue} 50%, ${Colors.primary} 50%)`, sm: `linear-gradient(45deg, ${Colors.deep_blue} 50%, ${Colors.primary} 50%)`, xs: `linear-gradient(45deg, ${Colors.deep_blue} 50%, ${Colors.primary} 50%)`, }
+        }}
+      >
         <Container maxWidth="xl" sx={{ px: { xl: 0, lg: 0, md: 0, sm: 2, xs: 2 } }}>
           {/* Top Social and Timing Bar */}
           <Box sx={{ backgroundColor: { xl: Colors.white, lg: Colors.white, md: Colors.white, sm: Colors.deep_blue, xs: Colors.deep_blue } }}>

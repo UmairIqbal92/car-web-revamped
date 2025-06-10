@@ -489,13 +489,12 @@ export default function Home() {
                 sx={{
                   mt: 3,
                   display: "flex",
-                  flexDirection: { xl: "row", lg: "row", md: "row", sm: "row", xs: "column" },
-                  justifyContent: { xl: "flex-start", lg: "flex-start", md: "flex-start", sm: "flex-start", xs: "stretch" },
+                  justifyContent: "flex-start",
                   gap: 2
                 }}
               >
-                <PrimaryButton fullWidth={true} color={Colors.primary} title={"Know More"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
-                <PrimaryButton fullWidth={true} startIcon={<PhoneIcon2 />} title={"+811 456 34563"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
+                <PrimaryButton color={Colors.primary} title={"Know More"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
+                <PrimaryButton startIcon={<PhoneIcon2 />} title={"+811 456 34563"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
               </Box>
             </Grid>
             <Grid size={{ xl: 6.5, lg: 6.5, md: 7.5, sm: 12, xs: 12 }}>
@@ -504,8 +503,8 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: { xl: "space-between", lg: "space-between", md: "center", sm: "center", xs: "center" },
-                  flexWrap: "wrap",
-                  gap: { xl: 0, lg: 0, md: 3, sm: 3, xs: 3 }
+                  flexWrap: "no-wrap",
+                  gap: { xl: 0, lg: 0, md: 3, sm: 1, xs: 1 }
                 }}
               >
                 {[...Array(3)].map((_, ind) => (
@@ -522,7 +521,7 @@ export default function Home() {
             <Grid size={{ xl: 10, lg: 10, md: 12, sm: 12, xs: 12 }}>
               <Grid container rowSpacing={10}>
                 <Grid size={12}>
-                  <Grid container spacing={4}>
+                  <Grid container spacing={4} flexDirection={{ xl: "row", lg: "row", md: "row", sm: "column-reverse", xs: "column-reverse" }}>
                     <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
                       <Box
                         sx={{

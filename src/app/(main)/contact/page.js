@@ -1,12 +1,15 @@
 'use client';
 
-import React, { Fragment } from 'react';
-import { Box, Container, Grid, TextField, Typography, styled } from '@mui/material';
+import React, { Fragment, useRef, useState } from 'react';
+import { Box, Container, Grid, TextField, Typography, styled, useTheme, useMediaQuery } from '@mui/material';
+import { EmailIcon2, MarkerIcon, TelephoneIcon } from '@/app/assets/icons';
+import emailjs from 'emailjs-com';
+import { useForm } from 'react-hook-form';
+import ReCAPTCHA from "react-google-recaptcha";
+import "@fontsource/urbanist";
 import Images from '@/app/assets/images';
 import Colors from '@/app/assets/styles';
-import "@fontsource/urbanist";
 import PrimaryButton from '@/app/components/button';
-import { EmailIcon2, MarkerIcon, TelephoneIcon } from '@/app/assets/icons';
 
 const CustomTextField = styled(TextField)({
   background: Colors.soft_gray,
@@ -36,6 +39,46 @@ const contactDetails = [
 ];
 
 function Contact() {
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const recaptchaRef = useRef(null);
+  const formRef = useRef(null);
+
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up("md"));
+  const isMd = useMediaQuery(theme.breakpoints.up("sm"));
+  const isSm = useMediaQuery(theme.breakpoints.up("md"));
+  const isXs = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
+  const onSubmit = (formData) => {
+    // if (!captchaToken) {
+    //   alert("Please verify you're not a robot");
+    //   return;
+    // } else {
+    emailjs.sendForm(
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
+      formRef.current,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+          reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Error sending message.");
+        }
+      );
+    // }
+  };
+
   return (
     <Fragment>
       <Box component={"section"}
@@ -73,7 +116,7 @@ function Contact() {
         </Container>
       </Box>
       <Box component={"section"} sx={{ my: "50px" }}>
-        <Grid container>
+        <Grid container rowSpacing={6}>
           <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
             <Container maxWidth="xl">
               <Box
@@ -87,29 +130,60 @@ function Contact() {
               >
                 <Typography variant="h2" sx={{ fontSize: { xl: 64, lg: 64, md: 64, sm: 56, xs: 48 }, fontWeight: 600, fontFamily: "Urbanist", textAlign: "center" }}>VÄLKOMMEN!</Typography>
                 <Typography variant="body1" sx={{ fontSize: 25, fontWeight: 300, fontFamily: "Urbanist", textAlign: "center" }}>Om du har några frågor, tveka inte att kontakta oss. Vi ser fram emot att höra från dig!</Typography>
-                <Grid container spacing={3} sx={{ width: "100%", }}>
+                <Grid
+                  container
+                  spacing={3}
+                  sx={{ width: "100%" }}
+                  ref={formRef}
+                  component={"form"}
+                  onSubmit={handleSubmit(onSubmit)}
+                >
                   <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
                     <CustomTextField
+                      type={"text"}
                       fullWidth
                       placeholder="Your name"
+                      {...register("name", {
+                        required: "Please enter your full name"
+                      })}
+                      error={errors?.name && true}
+                      helperText={errors?.name?.message}
                     />
                   </Grid>
                   <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
                     <CustomTextField
+                      type={"email"}
                       fullWidth
                       placeholder="Email Address"
+                      {...register("email", {
+                        required: "Please enter email address"
+                      })}
+                      error={errors?.email && true}
+                      helperText={errors?.email?.message}
                     />
                   </Grid>
                   <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
                     <CustomTextField
+                      type={"tel"}
                       fullWidth
                       placeholder="Phone"
+                      {...register("phone", {
+                        required: "Please enter phone number"
+                      })}
+                      error={errors?.phone && true}
+                      helperText={errors?.phone?.message}
                     />
                   </Grid>
                   <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
                     <CustomTextField
+                      type={"text"}
                       fullWidth
                       placeholder="Subject"
+                      {...register("subject", {
+                        required: "Please enter a subject"
+                      })}
+                      error={errors?.subject && true}
+                      helperText={errors?.subject?.message}
                     />
                   </Grid>
                   <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
@@ -118,6 +192,11 @@ function Contact() {
                       placeholder="Write a Message"
                       multiline={true}
                       rows={7}
+                      {...register("message", {
+                        required: "Please enter your message"
+                      })}
+                      error={errors?.message && true}
+                      helperText={errors?.message?.message}
                     />
                   </Grid>
                   <Grid size={12}>
@@ -130,6 +209,21 @@ function Contact() {
                       <PrimaryButton
                         title={"Send a Message"}
                         color={Colors.primary}
+                        type={"submit"}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid size={12}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <ReCAPTCHA
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        onChange={handleCaptchaChange}
+                        ref={recaptchaRef}
                       />
                     </Box>
                   </Grid>
@@ -144,7 +238,7 @@ function Contact() {
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1953.6938788920286!2d17.135829376700567!3d60.681113602093674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4660c7db339e7d67%3A0x7c2b3b8e173e9aa4!2sSTRINDBERGS%20BILV%C3%85RD!5e0!3m2!1sen!2s!4v1749475336064!5m2!1sen!2s"
-              style={{ border: 0, width: "100%", height: "100%" }}
+              style={{ border: 0, width: "100%", height: isLg ? "100%" : isMd ? "600px" : isSm ? "600px" : isXs ? "600px" : "100%" }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
