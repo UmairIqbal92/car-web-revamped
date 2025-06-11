@@ -489,7 +489,8 @@ export default function Home() {
                 sx={{
                   mt: 3,
                   display: "flex",
-                  justifyContent: "flex-start",
+                  justifyContent: { xl: "flex-start", lg: "flex-start", md: "flex-start", sm: "center", xs: "center" },
+                  flexDirection: "row",
                   gap: 2
                 }}
               >
