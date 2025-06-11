@@ -77,9 +77,9 @@ const Services = [
 ];
 
 const socialLinks = [
-  { name: "facebook", icon: <FacebookIconLight /> },
-  { name: "linkedin", icon: <LinkedInIcon /> },
-  { name: "youtube", icon: <YouTubeIcon /> },
+  { name: "facebook", icon: <FacebookIconLight />, path: "https://www.facebook.com" },
+  { name: "linkedin", icon: <LinkedInIcon />, path: "https://linkedin.com" },
+  { name: "youtube", icon: <YouTubeIcon />, path: "https://www.youtube.com" },
 ];
 
 function Footer() {
@@ -134,42 +134,23 @@ function Footer() {
                         gap: 2
                       }}
                     >
-                      <IconButton
-                        sx={{
-                          background: '#9D9D9D24',
-                          width: "34px",
-                          height: "34px",
-                          ":hover": {
-                            background: '#9D9D9D',
-                          }
-                        }}
-                      >
-                        <FacebookIconLight />
-                      </IconButton>
-                      <IconButton
-                        sx={{
-                          background: '#9D9D9D24',
-                          width: "34px",
-                          height: "34px",
-                          ":hover": {
-                            background: '#9D9D9D',
-                          }
-                        }}
-                      >
-                        <LinkedInIcon />
-                      </IconButton>
-                      <IconButton
-                        sx={{
-                          background: '#9D9D9D24',
-                          width: "34px",
-                          height: "34px",
-                          ":hover": {
-                            background: '#9D9D9D',
-                          }
-                        }}
-                      >
-                        <YouTubeIcon />
-                      </IconButton>
+                      {socialLinks.map((item, ind) => (
+                        <IconButton key={ind}
+                          sx={{
+                            background: '#9D9D9D24',
+                            width: "34px",
+                            height: "34px",
+                            ":hover": {
+                              background: '#9D9D9D',
+                            }
+                          }}
+                          onClick={() => {
+                            window.open(item.path, { target: "_blank" })
+                          }}
+                        >
+                          {item.icon}
+                        </IconButton>
+                      ))}
                     </Stack>
                   </Grid>
                 </Grid>

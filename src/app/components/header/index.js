@@ -65,6 +65,18 @@ function Header() {
     setAnchorEl(null);
   };
 
+  const handleSocialSite = (index) => {
+    if (index === 0) {
+      window.open("https://www.facebook.com", { target: "_blank" });
+    } else if (index === 1) {
+      window.open("https://www.twitter.com", { target: "_blank" });
+    } else if (index === 2) {
+      window.open("https://www.pinterest.com", { target: "_blank" });
+    } else if (index === 3) {
+      window.open("https://www.instagram.com", { target: "_blank" });
+    }
+  }
+
   return (
     <Fragment>
       <Drawer
@@ -456,6 +468,7 @@ function Header() {
                         <IconButton
                           onMouseEnter={() => setHoveredIndex(ind)}
                           onMouseLeave={() => setHoveredIndex(null)}
+                          onClick={() => handleSocialSite(ind)}
                           key={ind}
                           sx={{
                             width: "36px",
