@@ -64,7 +64,7 @@ function Contact() {
         process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
         formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS
       ).then(() => {
         SuccessToaster("Message sent successfully!");
         reset();
@@ -217,7 +217,7 @@ function Contact() {
                       }}
                     >
                       <ReCAPTCHA
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA}
                         onChange={handleCaptchaChange}
                         ref={recaptchaRef}
                       />
