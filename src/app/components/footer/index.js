@@ -13,7 +13,7 @@ import {
   CardMedia,
   Divider,
 } from '@mui/material';
-import { EmailIcon, FacebookIconLight, InstagramIcon2, LinkedInIcon, PhoneIcon, YouTubeIcon } from '@/app/assets/icons';
+import { EmailIcon, FacebookIconLight, InstagramIcon, InstagramIcon2, LinkedInIcon, PhoneIcon, YouTubeIcon } from '@/app/assets/icons';
 import Colors from '@/app/assets/styles';
 import Images from '@/app/assets/images';
 import "@fontsource/manrope";
@@ -77,9 +77,9 @@ const Services = [
 ];
 
 const socialLinks = [
-  { name: "facebook", icon: <FacebookIconLight />, path: "https://www.facebook.com" },
-  { name: "linkedin", icon: <LinkedInIcon />, path: "https://linkedin.com" },
-  { name: "youtube", icon: <YouTubeIcon />, path: "https://www.youtube.com" },
+  { name: "facebook", icon: <FacebookIconLight />, path: "https://www.facebook.com/profile.php?id=61556684804381" },
+  { name: "linkedin", icon: <InstagramIcon />, path: "https://www.instagram.com/strindbergs.bilvard/" },
+  // { name: "youtube", icon: <YouTubeIcon />, path: "https://www.youtube.com" },
 ];
 
 function Footer() {

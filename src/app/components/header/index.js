@@ -67,13 +67,9 @@ function Header() {
 
   const handleSocialSite = (index) => {
     if (index === 0) {
-      window.open("https://www.facebook.com", { target: "_blank" });
+      window.open("https://www.facebook.com/profile.php?id=61556684804381", { target: "_blank" });
     } else if (index === 1) {
-      window.open("https://www.twitter.com", { target: "_blank" });
-    } else if (index === 2) {
-      window.open("https://www.pinterest.com", { target: "_blank" });
-    } else if (index === 3) {
-      window.open("https://www.instagram.com", { target: "_blank" });
+      window.open("https://www.instagram.com/strindbergs.bilvard/", { target: "_blank" });
     }
   }
 
@@ -283,10 +279,10 @@ function Header() {
                     }}
                   >
                     <Typography variant="body2" sx={{ fontWeight: 600, fontFamily: "Manrope", display: { xl: "block", lg: "block", md: "block", sm: "none", xs: "none" } }}>
-                      +123456789
+                      079-3301334
                     </Typography>
                     <Typography variant="body2" sx={{ fontWeight: 600, fontFamily: "Manrope", display: { xl: "block", lg: "block", md: "block", sm: "none", xs: "none" } }}>
-                      support@abc.com
+                      support@strindbergsbilvard.se
                     </Typography>
                   </Box>
                 </Box>

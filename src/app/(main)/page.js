@@ -343,7 +343,7 @@ export default function Home() {
         <Grid container justifyContent={"center"} rowSpacing={5}>
           <Grid size={{ xl: 4.5, lg: 4.5, md: 4.5, sm: 8, xs: 12 }}>
             <Typography variant="h3" sx={{ fontFamily: "Urbanist", fontSize: "50px", fontWeight: "900 !important", textAlign: "center" }}>
-              We’re Offering the <span style={{ color: Colors.primary }}>Best Services</span> to You
+            Vi erbjuder dig <span style={{ color: Colors.primary }}>bästa tjänsterna</span>
             </Typography>
           </Grid>
           <Grid size={12}>
@@ -435,7 +435,7 @@ export default function Home() {
                             },
                           }}
                         >
-                          Book Now &nbsp;<Box component={"span"} className='add' style={{ transition: "all 0.3s ease-in-out", color: Colors.white, fontSize: "16px" }}>+</Box>
+                          Boka nu &nbsp;<Box component={"span"} className='add' style={{ transition: "all 0.3s ease-in-out", color: Colors.white, fontSize: "16px" }}>+</Box>
                         </Button>
                       </Box>
                     </Link>
@@ -458,7 +458,7 @@ export default function Home() {
             </Grid>
             <Grid size={12}>
               <Typography variant={"h3"} sx={{ fontSize: "16px", fontFamily: "Outfit", color: Colors.black }}>
-                Vi erbjuder allt från service till reparation, rekond, däckbyte och bilförsäljning. Med personlig service och erfarenhet är du i trygga händer hos oss.
+                Vi erbjuder allt från service och reparation till rekond, däckbyte och bilförsäljning. Med personlig service och gedigen erfarenhet är du i trygga händer hos oss.
               </Typography>
             </Grid>
             <Grid size={{ xl: 5.5, lg: 5.5, md: 4.5, sm: 12, xs: 12 }}>
@@ -494,8 +494,8 @@ export default function Home() {
                   gap: 2
                 }}
               >
-                <PrimaryButton color={Colors.primary} title={"Know More"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
-                <PrimaryButton startIcon={<PhoneIcon2 />} title={"+811 456 34563"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
+                <PrimaryButton color={Colors.primary} title={"Läs Mer"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
+                <PrimaryButton startIcon={<PhoneIcon2 />} title={"079-3301334"} endIcon={<Box sx={{ width: "8px", height: "8px", borderRadius: "50%", background: Colors.white }} />} boxShadow={"4px 4px 0px 0px #c4c4c4"} />
               </Box>
             </Grid>
             <Grid size={{ xl: 6.5, lg: 6.5, md: 7.5, sm: 12, xs: 12 }}>
@@ -598,7 +598,7 @@ export default function Home() {
                         }}
                       >
                         <Typography sx={{ fontSize: "60px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pb: 1, }}>Reservdelar</Typography>
-                        <Typography sx={{ fontSize: "20px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pt: 2, borderTop: `2px solid ${Colors.white + 33}` }}>Verkstaden på STRINDBERS BILVÅRD jobbar med helhetslösningar. Vi har kontakt med olika leverantörer både i Sverige och utomlands och kan skaffa resevervdelar, nya och begagnade, till alla bilar.</Typography>
+                        <Typography sx={{ fontSize: "20px", fontFamily: "Roboto", fontWeight: 500, color: Colors.white, pt: 2, borderTop: `2px solid ${Colors.white + 33}` }}>Vi har kontakt med olika leverantörer både i Sverige och utomlands och kan skaffa resevervdelar, nya och begagnade, till alla bilar.</Typography>
                         <Button
                           variant={"outlined"}
                           sx={{
@@ -686,7 +686,7 @@ export default function Home() {
                                     <LessThanIcon key={ind} />
                                   ))}
                                 </Box>
-                                <Typography variant="body1" sx={{ fontFamily: "Manrope", color: "#6D7076" }}>Our Testimonial</Typography>
+                                <Typography variant="body1" sx={{ fontFamily: "Manrope", color: "#6D7076" }}>Vårt Omdöme</Typography>
                                 <Box
                                   sx={{
                                     display: "inline-flex",
@@ -701,7 +701,7 @@ export default function Home() {
                               </Box>
                             </Grid>
                             <Grid size={12}>
-                              <Typography variant="h4" sx={{ fontSize: "40px", fontFamily: "Urbanist", fontWeight: 800 }}>What Our Student are Saying?</Typography>
+                              <Typography variant="h4" sx={{ fontSize: "40px", fontFamily: "Urbanist", fontWeight: 800 }}>Vad Säger Våra Kunder?</Typography>
                             </Grid>
                           </Grid>
                         </Grid>
@@ -821,10 +821,10 @@ export default function Home() {
               >
                 <Grid container rowSpacing={2}>
                   <Grid size={{ xl: 5, lg: 5, md: 12, sm: 12, xs: 12 }}>
-                    <Typography variant="h4" sx={{ fontFamily: "Urbanist", fontSize: { md: "40px", sm: "32px", xs: "32px" }, fontWeight: 900, color: Colors.white }}>Har du någon fråga? Välkommen att kontakta oss 1231313131313</Typography>
+                    <Typography variant="h4" sx={{ fontFamily: "Urbanist", fontSize: { md: "40px", sm: "32px", xs: "32px" }, fontWeight: 900, color: Colors.white }}>Har du någon fråga? Välkommen att kontakta oss 079-3301334</Typography>
                   </Grid>
                   <Grid size={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}>
-                    <PrimaryButton title={"Book Now"} />
+                    <PrimaryButton title={"Boka nu"} />
                   </Grid>
                 </Grid>
               </Box>
